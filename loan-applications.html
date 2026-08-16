@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Risk IQ | Loan Applications</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+<aside class="sidebar">
+
+<div class="brand">
+
+<img src="logo.png" alt="Risk IQ">
+
+<div>
+
+<h1>RISK IQ</h1>
+
+<span>AI RISK INTELLIGENCE</span>
+
+</div>
+
+</div>
+
+
+<nav class="navigation">
+
+<a href="index.html" class="nav-item">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+
+<a href="loan-applications.html" class="nav-item active">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>Loan Applications</span>
+
+</a>
+
+
+<a href="risk-assessment.html" class="nav-item">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<span>Risk Assessment</span>
+
+</a>
+
+
+<a href="risk-rules.html" class="nav-item">
+
+<i class="fa-solid fa-sliders"></i>
+
+<span>Risk Rules</span>
+
+</a>
+
+
+<a href="monitoring.html" class="nav-item">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Monitoring</span>
+
+</a>
+
+</nav>
+
+
+<div class="sidebar-bottom">
+
+<div class="admin-profile">
+
+<div class="avatar">AD</div>
+
+<div>
+
+<strong>Admin</strong>
+
+<small>Risk Manager</small>
+
+</div>
+
+</div>
+
+</div>
+
+</aside>
+
+
+
+<main class="main">
+
+
+<header class="topbar">
+
+<div class="page-title">
+
+<div class="breadcrumb">
+Loan Management
+</div>
+
+<h2>Loan Applications</h2>
+
+</div>
+
+</header>
+
+
+
+<section class="content">
+
+
+<div class="page-header">
+
+<div>
+
+<p class="eyebrow">
+APPLICATION MANAGEMENT
+</p>
+
+<h1>Loan Applications</h1>
+
+<p>
+Applications assessed by Risk IQ are stored here.
+</p>
+
+</div>
+
+
+<a
+href="risk-assessment.html"
+class="primary-button"
+>
+
+<i class="fa-solid fa-plus"></i>
+
+New Assessment
+
+</a>
+
+</div>
+
+
+
+<div class="analytics-kpis">
+
+<div class="analytics-card">
+
+<span>TOTAL APPLICATIONS</span>
+
+<strong id="totalApplications">
+0
+</strong>
+
+</div>
+
+
+<div class="analytics-card">
+
+<span>APPROVED</span>
+
+<strong id="approvedApplications">
+0
+</strong>
+
+</div>
+
+
+<div class="analytics-card">
+
+<span>DECLINED</span>
+
+<strong id="declinedApplications">
+0
+</strong>
+
+</div>
+
+
+<div class="analytics-card">
+
+<span>HUMAN REVIEW</span>
+
+<strong id="reviewApplications">
+0
+</strong>
+
+</div>
+
+</div>
+
+
+
+<div class="comparison-panel">
+
+<div class="comparison-head">
+
+<span>Borrower</span>
+
+<span>Risk Score</span>
+
+<span>Decision</span>
+
+<span>Date</span>
+
+</div>
+
+
+<div id="applicationList">
+
+</div>
+
+</div>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<script src="storage.js"></script>
+
+<script src="loan-applications.js"></script>
+
+</body>
+
+</html>
