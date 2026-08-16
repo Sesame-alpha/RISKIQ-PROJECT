@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Risk IQ | Risk Rules</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <img src="logo.png" alt="Risk IQ">
+
+            <div>
+                <h1>RISK IQ</h1>
+                <span>AI RISK INTELLIGENCE</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="loan-applications.html" class="nav-item">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Loan Applications</span>
+            </a>
+
+            <a href="risk-assessment.html" class="nav-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Risk Assessment</span>
+            </a>
+
+            <a href="risk-rules.html" class="nav-item active">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Risk Rules</span>
+            </a>
+
+            <a href="monitoring.html" class="nav-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Monitoring</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-profile">
+
+                <div class="avatar">AD</div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Risk Manager</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div class="page-title">
+                <div class="breadcrumb">Risk Management</div>
+                <h2>Risk Rules</h2>
+            </div>
+
+            <div class="top-profile">
+
+                <div class="avatar">AD</div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Micro Lending</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="content">
+
+            <div class="page-header">
+
+                <div>
+                    <p class="eyebrow">RISK ENGINE CONFIGURATION</p>
+
+                    <h1>Risk Rules</h1>
+
+                    <p>
+                        Configure the rules Risk IQ uses when calculating borrower risk.
+                    </p>
+                </div>
+
+                <button class="primary-button" onclick="openRuleForm()">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Rule
+                </button>
+
+            </div>
+
+
+            <div class="analytics-kpis">
+
+                <div class="analytics-card">
+                    <span>ACTIVE RULES</span>
+                    <strong id="ruleCount">0</strong>
+                    <small>Rules currently used</small>
+                </div>
+
+                <div class="analytics-card">
+                    <span>TOTAL WEIGHT</span>
+                    <strong id="totalPoints">0</strong>
+                    <small>Maximum contribution</small>
+                </div>
+
+                <div class="analytics-card">
+                    <span>ENGINE STATUS</span>
+                    <strong>ACTIVE</strong>
+                    <small class="positive">Ready for assessment</small>
+                </div>
+
+            </div>
+
+
+            <div class="rules-container" id="rulesContainer"></div>
+
+
+            <div class="rule-form-panel" id="ruleFormPanel">
+
+                <div class="panel-title">
+
+                    <div>
+                        <h3>Create Risk Rule</h3>
+                        <p>Add a rule that affects the borrower risk score.</p>
+                    </div>
+
+                    <button class="close-button" onclick="closeRuleForm()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+
+                <form id="ruleForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>Rule Name</label>
+
+                            <input
+                                type="text"
+                                id="ruleName"
+                                placeholder="e.g. Strong Repayment History"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Data Field</label>
+
+                            <select id="ruleField" required>
+
+                                <option value="">
+                                    Select field
+                                </option>
+
+                                <option value="repaymentBehaviour">
+                                    Repayment Behaviour
+                                </option>
+
+                                <option value="previousLoans">
+                                    Previous Loan History
+                                </option>
+
+                                <option value="latePayments">
+                                    Late Payments
+                                </option>
+
+                                <option value="previousDefaults">
+                                    Previous Defaults
+                                </option>
+
+                                <option value="debtRatio">
+                                    Debt-to-Income
+                                </option>
+
+                                <option value="affordability">
+                                    Affordability
+                                </option>
+
+                                <option value="incomeStability">
+                                    Income Stability
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Condition</label>
+
+                            <input
+                                type="text"
+                                id="ruleCondition"
+                                placeholder="e.g. excellent, low, zero"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Points</label>
+
+                            <input
+                                type="number"
+                                id="rulePoints"
+                                min="1"
+                                max="100"
+                                placeholder="20"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Description</label>
+
+                        <textarea
+                            id="ruleDescription"
+                            placeholder="Explain what this rule means..."
+                            rows="3"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            onclick="closeRuleForm()"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Rule
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="storage.js"></script>
+<script src="risk-rules.js"></script>
+
+</body>
+</html>
