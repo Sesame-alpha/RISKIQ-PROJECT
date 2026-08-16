@@ -1,0 +1,28 @@
+/* ================= STATUS ================= */
+
+.status {
+    font-size: 8px;
+    padding: 5px 8px;
+    border-radius: 20px;
+}
+
+.status.good {
+    background: #edf7f1;
+    color: var(--green);
+}
+
+/* ADD THESE */
+
+.status.bad {
+    background: #fff0f0;
+    color: var(--red);
+}
+
+.status.review {
+    background: #fff8df;
+    color: #876d14;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+}
